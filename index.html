@@ -1,0 +1,72 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TITLE TITLE TITLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">NAME NAME NAME NAME</div>
+    <nav class="nav">
+      <button class="btn btn-primary" id="startTest">START TEST</button>
+      <a class="nav-link" href="#" id="stats">STATS</a>
+      <button class="btn btn-ghost" id="authBtn">LOGIN</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="hero-title">TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE</h1>
+      <div class="hero-body">
+        <aside class="meta">
+          <div class="card">
+            <h4 class="muted">Overview</h4>
+            <p class="small">Brief meta info; duration; attempts; difficulty.</p>
+          </div>
+          <div class="card small-card">
+            <h4 class="muted">Progress</h4>
+            <div class="progress">
+              <div class="progress-bar" style="width: 28%"></div>
+            </div>
+            <p class="small">28% completed</p>
+          </div>
+        </aside>
+
+        <article class="content">
+          <div class="content-scroll">        </div>
+
+          <div class="actions">
+            <button class="btn btn-secondary" id="bookmark">Bookmark</button>
+            <button class="btn btn-outline" id="share">Share</button>
+            <button class="btn btn-primary" id="begin">Begin Test</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 Assessment Platform</small>
+  </footer>
+
+  <script>
+    // Simple interactive behaviour: toggle login label and simulate start action
+    const authBtn = document.getElementById('authBtn');
+    let loggedIn = false;
+    authBtn.addEventListener('click', () => {
+      loggedIn = !loggedIn;
+      authBtn.textContent = loggedIn ? 'LOGOUT' : 'LOGIN';
+    });
+
+    document.getElementById('startTest').addEventListener('click', () => {
+      document.getElementById('begin').classList.add('pulse');
+      setTimeout(() => document.getElementById('begin').classList.remove('pulse'), 900);
+    });
+  </script>
+</body>
+</html>
